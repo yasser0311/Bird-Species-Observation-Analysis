@@ -31,13 +31,13 @@ st.set_page_config(page_title="🦅🦆Bird Monitoring Dashboard🦉🐦", layou
 #     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # # Path to your local image file
-# image_path = 'D:\\MTDM37\\Guvi\\DS_Birds_EDA\\bird.jpg'
+# image_path = 'D:\\MTDM37\\Guvi\\DS_Birds_EDA\\Scripts_2\\bird.jpg'
 # set_background(image_path, opacity=0.7)
 
 # Load your dataset
 @st.cache_data
 def load_data():
-    combined_df = pd.read_csv('D:\\MTDM37\\Guvi\\DS_Birds_EDA\\combined_data_cleaned_v3.csv', low_memory=False)
+    combined_df = pd.read_csv('D:\\MTDM37\\Guvi\\DS_Birds_EDA\\Scripts_2\\combined_data_cleaned_v3.csv', low_memory=False)
     combined_df["Date"] = pd.to_datetime(combined_df["Date"], errors='coerce')
     combined_df["Month"] = combined_df["Date"].dt.month
 
@@ -282,7 +282,7 @@ if show_environmental:
 # --------------------------------------------5. Distance and Behavior and Observer Trends----------------------------------------------------
 if show_distance_observer:
     st.subheader("↔️📈Distance Analysis📊")
-    file_path = 'D:\\MTDM37\\Guvi\\DS_Birds_EDA\\combined_data_cleaned_v3.csv'
+    file_path = 'D:\\MTDM37\\Guvi\\DS_Birds_EDA\\Scripts_2\\combined_data_cleaned_v3.csv'
     df = pd.read_csv(file_path, dtype=str)  # Load as text to inspect
     df["Distance"] = df["Distance"].replace({
         "<= 50 Meters": 50,
